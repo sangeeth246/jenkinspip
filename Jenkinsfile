@@ -5,7 +5,7 @@ stage('code')
 {
 
 steps{ 
-     echo "hello world"
+     sh 'sudo yum -y install httpd'
 }
 }
 }
