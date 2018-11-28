@@ -5,7 +5,7 @@ stage('code')
 {
 
 steps{ 
-     sh 'sudo yum -y install httpd'
+git 'https://github.com/sangeeth246/project1.git'
 }
 }
 }
