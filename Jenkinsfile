@@ -1,12 +1,17 @@
 pipeline{
 agent any
 stages{
-stage('code')
-{
+     stage('code')
+     {
 
-steps{ 
-git 'https://github.com/sangeeth246/project1.git'
+        steps{ 
+                git 'https://github.com/sangeeth246/project1.git'
+            }
+      }
+ stage('install apache'){
+  steps{
+    sh 'yum -y install httpd'
 }
-}
+}    
 }
 }
