@@ -10,7 +10,7 @@ stages{
       }
  stage('install apache'){
   steps{
-    sh 'yum -y install httpd'
+    sh 'sudo yum -y install httpd'
 }
 }    
 }
