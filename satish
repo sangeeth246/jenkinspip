@@ -13,5 +13,10 @@ stages{
     sh 'sudo yum -y install httpd'
 }
 }    
+stage('bulid'){
+steps{
+       sh 'mvn package'
+}
+}
 }
 }
