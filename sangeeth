@@ -1,0 +1,33 @@
+pipeline{
+agent any
+stages{
+     stage('code')
+     {
+
+        steps{ 
+                git 'https://github.com/sangeeth246/project1.git'
+            }
+      }
+ stage('install apache'){
+  steps{
+    sh 'sudo yum -y install httpd'
+       }
+}          
+ stage('start  apache'){
+  steps{
+    sh 'sudo systemctl start httpd'
+       }
+}          
+stage('bulid'){
+steps{
+       sh 'mvn package'
+}
+}
+stage('deploy'){
+steps{
+       sh 'mvn tomcat7:deploy'
+}
+}
+
+}
+}
